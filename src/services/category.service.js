@@ -18,7 +18,14 @@ const createCategory = async (reqBody) => {
   return category;
 };
 
+const getCategory = async () => {
+  const categories = await Category.findAll();
+
+  return categories;
+};
+
 module.exports = {
   validateCategory,
   createCategory,
+  getCategory,
 };
