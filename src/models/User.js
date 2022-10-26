@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
       displayName: {
-        field: 'display_name',
+        // field: 'display_name',
         type: DataTypes.STRING,
       },
       email: DataTypes.STRING,
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       image: DataTypes.STRING,
     },
     {
-      underscore: true,
+      underscored: true,
       timestamps: false,
       tableName: 'users',
     }
