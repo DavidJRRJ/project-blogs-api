@@ -35,7 +35,16 @@ const createUser = async (reqBody) => {
   return jwtUtil.createToken({ ...reqBody, password: '_' });
 };
 
+const getAllUser = async () => {
+  const users = await User.findAll({
+    attributes: { exclude: ['password'] },
+  });
+
+  return users;
+};
+
 module.exports = {
   validateUser,
   createUser,
+  getAllUser,
 };

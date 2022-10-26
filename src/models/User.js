@@ -7,7 +7,10 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      display_name: DataTypes.STRING,
+      displayName: {
+        field: 'display_name',
+        type: DataTypes.STRING,
+      },
       email: DataTypes.STRING,
       password: DataTypes.STRING,
       image: DataTypes.STRING,
