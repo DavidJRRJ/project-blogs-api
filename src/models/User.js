@@ -1,18 +1,23 @@
-const UserModel = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
-    id: {
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define(
+    "User",
+    {
+      id: {
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      display_name: DataTypes.STRING,
+      email: DataTypes.STRING,
+      password: DataTypes.STRING,
+      image: DataTypes.STRING,
     },
-    display_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    image: DataTypes.STRING,
-  }
+    {
+      underscore: true,
+      timestamps: false,
+      tableName: 'users',
+    }
   );
 
   return User;
-}
-
-module.exports = UserModel;
+};
